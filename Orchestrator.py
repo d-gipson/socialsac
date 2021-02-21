@@ -1,4 +1,4 @@
-import requests, json, os
+import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
@@ -133,33 +133,9 @@ homelessshelterdirectory()
 
 cityofsacramento()
 '''
-
-ingestFolder = r'dashboard/core/static/ingest/'
-ingests = os.scandir(ingestFolder)
-for file in ingests:
-    with open(file.path) as f:
-        data = json.load(f)
-        if 'food' in f:
-            for entry in data:
-                record = Freedge(
-                                name = entry['title'],
-                                address = entry['StreetAddress'],
-                                location = entry['StreetAddress'],
-                                availability = 'y',
-                                phone = entry['PhoneNumber'],
-                                date_updated = ''
-                            )
-        if 'shelter' in f:
-            for entry in data:
-                record = Shelter(
-                                name = entry['title'],
-                                address = entry['StreetAddress'],
-                                location = entry['StreetAddress'],
-                                availability = 'y',
-                                date_updated = ''
-                            )
-
+                
 '''
+
 # creating record would look something like:
 # record = Shelter(name=,
 # location="",
@@ -169,3 +145,4 @@ for file in ingests:
 # email="")
 #
 # record.save()
+'''

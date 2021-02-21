@@ -1,15 +1,9 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-
-"""
 
 from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
 from django_google_maps import fields as map_fields
-
-# Create your models here.
 
 class Shelter(models.Model):
 
@@ -24,8 +18,8 @@ class Shelter(models.Model):
     location = map_fields.GeoLocationField(max_length=75)
     availability = models.CharField(max_length=1, choices=AVAILABILITY)
     date_updated = models.DateTimeField(default=timezone.now)
-    phone = models.CharField(max_length=45)
-    email = models.EmailField(max_length=254)
+    phone = models.CharField(max_length=45, default='')
+    email = models.EmailField(max_length=254, default='')
 
     class Meta:
         ordering = ['availability']
@@ -46,7 +40,7 @@ class Freedge(models.Model):
     location = models.CharField(max_length=100, default='n/a')
     availability = models.CharField(max_length=1, choices=AVAILABILITY)
     date_updated = models.DateTimeField(default=timezone.now)
-    phone = models.CharField(max_length=45)
+    phone = models.CharField(max_length=45, default='')
 
     class Meta:
         ordering = ['availability']

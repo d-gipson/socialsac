@@ -1,10 +1,6 @@
-import requests
-### pip3 install requests
-
+import requests, json, os
 from urllib.request import urlopen
-
 from bs4 import BeautifulSoup
-### pip3 install BeautifulSoup4
 
 def shelterlist():
 
@@ -28,7 +24,6 @@ def shelterlist():
 
     return(data.text)
 
-print(shelterlist())
 
 def sacramentofoodbank():
 
@@ -55,8 +50,6 @@ def sacramentofoodbank():
 
     return(data1.text, data2.text)
     
-
-print(sacramentofoodbank())
 
 def homelessshelterdirectory():
     
@@ -103,7 +96,6 @@ def homelessshelterdirectory():
         print(more_data.h4.text)
         print(more_data.p.text)        
 
-homelessshelterdirectory()
 
 def cityofsacramento():
     
@@ -132,6 +124,48 @@ def cityofsacramento():
     for i in range(1, p_tags):
         print (data[i].text)
 
+'''
+print(shelterlist())
+
+print(sacramentofoodbank())
+
+homelessshelterdirectory()
+
 cityofsacramento()
+'''
 
+ingestFolder = r'dashboard/core/static/ingest/'
+ingests = os.scandir(ingestFolder)
+for file in ingests:
+    with open(file.path) as f:
+        data = json.load(f)
+        if 'food' in f:
+            for entry in data:
+                record = Freedge(
+                                name = entry['title'],
+                                address = entry['StreetAddress'],
+                                location = entry['StreetAddress'],
+                                availability = 'y',
+                                phone = entry['PhoneNumber'],
+                                date_updated = ''
+                            )
+        if 'shelter' in f:
+            for entry in data:
+                record = Shelter(
+                                name = entry['title'],
+                                address = entry['StreetAddress'],
+                                location = entry['StreetAddress'],
+                                availability = 'y',
+                                date_updated = ''
+                            )
 
+'''
+# creating record would look something like:
+# record = Shelter(name=,
+# location="",
+# availability="",
+# date_updated="",
+# phone="",
+# email="")
+#
+# record.save()

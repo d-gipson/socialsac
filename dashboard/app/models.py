@@ -33,16 +33,6 @@ class Shelter(models.Model):
     def __str__(self):
         return self.name
 
-# creating record would look something like:
-# record = Shelter(name=,
-# location="",
-# availability="",
-# date_updated="",
-# phone="",
-# email="")
-#
-# record.save()
-
 class Freedge(models.Model):
 
     AVAILABILITY = (
@@ -56,6 +46,7 @@ class Freedge(models.Model):
     location = models.CharField(max_length=100, default='n/a')
     availability = models.CharField(max_length=1, choices=AVAILABILITY)
     date_updated = models.DateTimeField(default=timezone.now)
+    phone = models.CharField(max_length=45)
 
     class Meta:
         ordering = ['availability']

@@ -14,12 +14,12 @@ from django.contrib.auth.models import User
 class Shelter(models.Model):
 
     name = models.CharField(max_length=75)
-    address = models.CharField(max_length=75)
+    location = models.CharField(max_length=75)
 
     AVAILABILITY = (
-            ('O', 'Open'),
-            ('P', 'Partial'),
-            ('C', 'Closed'),
+            ('Y', 'Yes'),
+            ('S', 'Some'),
+            ('N', 'No'),
         )
 
     availability = models.CharField(max_length=1, choices=AVAILABILITY)
@@ -35,10 +35,16 @@ class Shelter(models.Model):
 
 # creating record would look something like:
 # record = Shelter(name="",
-# address="",
+# location="",
 # availability="",
 # date_updated="",
 # phone="",
 # email="")
 #
 # record.save()
+
+class Freedge(models.model):
+
+    name = models.CharField(max_length=30)
+    location = models.CharField(max_length=75)
+    availability = models.CharField(max_length=1, choices=AVAILABILITY)

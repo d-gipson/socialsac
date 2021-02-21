@@ -16,6 +16,7 @@ class Command(BaseCommand):
             f = open(file.path, 'r')
             contents = f.read()
             data = json.loads(contents)
+            print(data["data"])
             if 'food' in f.name:
                 for entry in data:
                     print(entry)

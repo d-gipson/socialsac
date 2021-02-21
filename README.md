@@ -28,10 +28,15 @@ ref: https://sacramentostepsforward.org/2019pitcount/
 
 ## Solution
 
-Social Sac is an easy to use and free web app dashboard for aggregation of data useful to the houseless of Sacramento.
+Social Sac provides a dashboard that aggregates data concerning weather forecasts and alerts, warm shelter availability and helpful info, COVID-19 vaccine information, and foodbanks/community refrigerators. On the back end, the tool uses custom web scraping helpers and scheduled tasks to obtain the most up-to-date info on shelter availability and weather, and maintains a SQL database of the associated info.
+
 Connecting those in need with organizations providing help and a home is a key objective for us.
 
 [Screenshot]
+
+Social Sac is a Django (Python) web app that relies upon the Open Weather API, the Google Maps API, custom web scrapers and connectors built in Python to fetch data and maintain a dynamic dashboard.
+
+The dashboard design is built on an AppSeed template utilizing Google Material Design libraries.
 
 ## Impact
 
@@ -41,4 +46,4 @@ There is some great room for improvement in this crisis; houselessness impacts a
 
 ## Team
 
-Meet the team! Drew is an accomplished Cybersecurity Specialist and a Teacher Assistant for the Cyber UC Davis Bootcamp. He came up with the idea for the project and worked on both the backend and frontend of the code. Nathan is a recent graduate of the UC Davis Cybersecurity Bootcamp, with certifications from CompTia Security+ and Splunk. Abdullah is an Electronics and Computer Engineer with a passion for Project Management and Design. Together we were able to beat the pressure and come up with an innovative solution to reconnect the homeless with the Sac community. 
+Meet the team! Drew is an accomplished Cybersecurity Specialist and a Teacher Assistant for the Cyber UC Davis Bootcamp. He came up with the idea for the project and worked on both the backend and frontend of the code. Nathan is a recent graduate of the UC Davis Cybersecurity Bootcamp, with certifications from CompTia Security+ and Splunk. Abdullah is an Electronics and Computer Engineer and is passionate for Project Management and Design. Together we were able to beat the pressure and come up with an innovative solution to reconnect the houseless with the Sac community. 

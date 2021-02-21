@@ -9,6 +9,8 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 
+from .models import Shelter
+
 #@login_required(login_url="/login/")
 def index(request):
     
@@ -40,3 +42,5 @@ def pages(request):
     
         html_template = loader.get_template( 'page-500.html' )
         return HttpResponse(html_template.render(context, request))
+
+def 

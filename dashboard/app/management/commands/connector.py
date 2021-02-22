@@ -1,5 +1,6 @@
 import os
 import json
+from geopy.geocoders import 
 from django.core.management.base import BaseCommand, CommandError
 from app.models import Freedge, Shelter
 
@@ -23,7 +24,7 @@ class Command(BaseCommand):
                     record = Freedge(
                                     name = entry['title'],
                                     address = entry['StreetAddress'],
-                                    location = entry['StreetAddress'],
+                                    geolocation = " ",
                                     availability = 'y',
                                     phone = entry['PhoneNumber'],
                                     date_updated = ''

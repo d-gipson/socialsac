@@ -15,7 +15,7 @@ class Shelter(models.Model):
 
     name = models.CharField(max_length=75)
     address = map_fields.AddressField(max_length=75)
-    location = map_fields.GeoLocationField(max_length=75)
+    geolocation = map_fields.GeoLocationField(max_length=100)
     availability = models.CharField(max_length=1, choices=AVAILABILITY)
     date_updated = models.DateTimeField(default=timezone.now)
     phone = models.CharField(max_length=45, default='')
@@ -37,7 +37,7 @@ class Freedge(models.Model):
 
     name = models.CharField(max_length=30)
     address = models.CharField(max_length=30)
-    location = models.CharField(max_length=100, default='n/a')
+    geolocation = map_fields.GeoLocationField(max_length=100)
     availability = models.CharField(max_length=1, choices=AVAILABILITY)
     date_updated = models.DateTimeField(default=timezone.now)
     phone = models.CharField(max_length=45, default='')

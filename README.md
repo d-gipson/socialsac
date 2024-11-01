@@ -46,4 +46,4 @@ There is some great room for improvement in this crisis; houselessness impacts a
 
 ## Team
 
-Meet the team! Drew is an accomplished Cybersecurity Specialist and a Teacher Assistant for the Cyber UC Davis Bootcamp. He came up with the idea for the project and worked on both the backend and frontend of the code. Nathan is a recent graduate of the UC Davis Cybersecurity Bootcamp, with certifications from CompTia Security+ and Splunk. Abdullah is an Electronics and Computer Engineer and is passionate for Project Management and Design. Together we were able to beat the pressure and come up with an innovative solution to reconnect the houseless with the Sac community. 
+Meet the team! Nathan is a recent graduate of the UC Davis Cybersecurity Bootcamp, with certifications from CompTia Security+ and Splunk. Abdullah is an Electronics and Computer Engineer and is passionate for Project Management and Design. Drew is an Cybersecurity Specialist and a Teacher Assistant for the Cyber UC Davis Bootcamp.  Together we were able to beat the pressure and come up with an innovative solution to reconnect the houseless with the Sac community. 
